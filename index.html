@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Русский язык и литература</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('/pictures/back.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: rgba(78, 52, 46, 0.9);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: rgba(109, 76, 65, 0.9);
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            background-color: rgba(141, 110, 99, 0.9);
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: rgba(161, 136, 127, 0.9);
+        }
+        section {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin: 10px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .rules {
+            background-color: #efebe9;
+            border-radius: 5px;
+            padding: 20px;
+        }
+        .rules li a {
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .rules li a:hover {
+            color: #e67e22;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background-color: #e67e22;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #f39c12;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+            padding: 20px;
+            bottom: 42%;
+            left: 40%;
+            transform: translateX(-50%);
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 5px 10px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Русский язык и литература</h1>
+</header>
+<nav>
+    <a class="dropdown">Русский язык
+        <div class="dropdown-content">
+            <a href="/rus_rules">Морфология</a>
+            <a href="/org">Орфография</a>
+            <a href="/lecs">Лексикология</a>
+        </div>
+    </a>
+    <a href="/test">Тест</a>
+    <a href="/books">Книги</a>
+    <a href="/info">О нас</a>
+</nav>
+<section id="rules">
+    <h2>Правила русского языка</h2>
+    <div class="rules">
+        <p>Статьи.</p>
+        <p>Новости за 2024.04:</p>
+        <ul>
+            <li><a href="/news1">Онегин, Телегин и Ткачук: Как три Евгения сошлись в одном фестивальном фильме</a></li>
+            <li><a href="/news2">В Москве в 13-й раз прошла "Библионочь"</a></li>
+            <li><a href="/news3">На "Библионочи" назвали победителей литературного конкурса "Класс!" из регионов</a></li>
+        </ul>
+    </div>
+</section>
+<section id="tests">
+    <h2>Тесты по русскому языку</h2>
+    <p>Здесь могут быть различные тесты по русскому языку для проверки знаний.</p>
+    <a class="button" href="/test">Пройти тест</a>
+</section>
+<section id="books">
+    <h2>Рекомендуемые книги</h2>
+    <p>Здесь можно разместить список рекомендованных книг по русскому языку и литературе.</p>
+    <a class="button" href="/books">Посмотреть книги</a>
+</section>
+<section id="about">
+    <h2>О нас</h2>
+    <p>Информация о сайте, его целях и авторах.</p>
+    <a class="button" href="/info">Подробнее</a>
+</section>
+<script>
+    window.onload = function() {
+        var dropdown = document.querySelector('.dropdown');
+        var dropdownContent = document.querySelector('.dropdown-content');
+        var timeoutId;
+        var isHoveringDropdown = false;
+
+        function showDropdown() {
+            clearTimeout(timeoutId);
+            dropdownContent.style.display = 'block';
+        }
+
+        function hideDropdown() {
+            timeoutId = setTimeout(function() {
+                if (!isHoveringDropdown) {
+                    dropdownContent.style.display = 'none';
+                }
+            }, 500);
+        }
+
+        dropdown.onmouseover = function() {
+            showDropdown();
+        }
+
+        dropdown.onmouseleave = function() {
+            hideDropdown();
+        }
+
+        dropdownContent.onmouseover = function() {
+            isHoveringDropdown = true;
+        }
+
+        dropdownContent.onmouseleave = function() {
+            isHoveringDropdown = false;
+            hideDropdown();
+        }
+    };
+</script>
+</body>
+</html>
