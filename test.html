@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест по русскому языку</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('/pictures/back.jpg') no-repeat center center fixed; /* Убедитесь, что у вас есть изображение с таким именем */
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+
+        }
+        header {
+            background-color: #4e342e;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #6d4c41;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            background-color: #8d6e63;
+        }
+        nav a:hover {
+            background-color: #a1887f;
+        }
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question h3 {
+            margin-top: 0;
+        }
+        .answers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .answer {
+            flex-basis: 45%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #e0e0e0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .answer.selected {
+            background-color: #81c784;
+        }
+        .answer:hover {
+            background-color: #bdbdbd;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .result h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Тест по русскому языку</h1>
+</header>
+<nav>
+    <a href="/index">Главная</a>
+    <a href="/info">О нас</a>
+</nav>
+<section id="quiz">
+    <!-- Вопрос 1 -->
+    <div class="question">
+        <h3>1. Какое слово написано правильно?</h3>
+        <div class="answers">
+            <div class="answer" data-correct="true">Апельсин</div>
+            <div class="answer" data-correct="false">Апельссин</div>
+            <div class="answer" data-correct="false">Апельсен</div>
+            <div class="answer" data-correct="false">Апельсён</div>
+        </div>
+    </div>
+    <!-- Вопрос 2 -->
+    <div class="question">
+        <h3>2. Как называется часть речи, обозначающая действие?</h3>
+        <div class="answers">
+            <div class="answer" data-correct="true">Глагол</div>
+            <div class="answer" data-correct="false">Существительное</div>
+            <div class="answer" data-correct="false">Прилагательное</div>
+            <div class="answer" data-correct="false">Местоимение</div>
+        </div>
+    </div>
+    <!-- Добавьте остальные вопросы здесь -->
+    <!-- Вопрос 3 -->
+    <div class="question">
+        <h3>3. Как образуется множественное число от слова "книга"?</h3>
+        <div class="answers">
+            <div class="answer" data-correct="false">Книга</div>
+            <div class="answer" data-correct="true">Книги</div>
+            <div class="answer" data-correct="false">Книгы</div>
+            <div class="answer" data-correct="false">Книжки</div>
+        </div>
+    </div>
+    <!-- Вопрос 4 -->
+    <div class="question">
+        <h3>4. Как называется произведение, в котором автор рассказывает о событиях своей жизни?</h3>
+        <div class="answers">
+            <div class="answer" data-correct="false">Поэма</div>
+            <div class="answer" data-correct="false">Пьеса</div>
+            <div class="answer" data-correct="false">Эссе</div>
+            <div class="answer" data-correct="true">Автобиография</div>
+        </div>
+    </div>
+    <!-- Вопрос 5 -->
+    <div class="question">
+        <h3>5. Как называется произведение, состоящее из строк, объединенных общим стихотворным строем и ритмом?</h3>
+        <div class="answers">
+            <div class="answer" data-correct="false">Роман</div>
+            <div class="answer" data-correct="false">Сказка</div>
+            <div class="answer" data-correct="true">Стихотворение</div>
+            <div class="answer" data-correct="false">Драма</div>
+        </div>
+    </div>
+    <!-- Вопрос 6 -->
+    <div class="question">
+        <h3>6. Как называется звукоподражательное слово, имитирующее звук?</h3>
+        <div class="answers">
+            <div class="answer" data-correct="false">Экспрессия</div>
+            <div class="answer" data-correct="false">Интонация</div>
+            <div class="answer" data-correct="true">Ономатопея</div>
+            <div class="answer" data-correct="false">Ассонанс</div>
+        </div>
+    </div>
+    <!-- Вопрос 7 -->
+    <div class="question">
+        <h3>7. Как называется фраза, в которой две противоположные мысли сведены в одно предложение?</h3>
+        <div class="answers">
+            <div class="answer" data-correct="false">Парадокс</div>
+            <div class="answer" data-correct="true">Оксюморон</div>
+            <div class="answer" data-correct="false">Ирония</div>
+            <div class="answer" data-correct="false">Метафора</div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h3>8. Какое слово из перечисленных является местоимением личного второго лица множественного числа?</h3>
+        <div class="answers">
+            <div class="answer" data-correct="false">Они</div>
+            <div class="answer" data-correct="false">Он</div>
+            <div class="answer" data-correct="false">Мы</div>
+            <div class="answer" data-correct="true">Вы</div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h3>9. Как называется упрощенное средство образования слова, при котором приписывается одна или несколько букв к корню?</h3>
+        <div class="answers">
+            <div class="answer" data-correct="false">Суффикс</div>
+            <div class="answer" data-correct="false">Префикс</div>
+            <div class="answer" data-correct="false">Слитно</div>
+            <div class="answer" data-correct="true">Приставка</div>
+        </div>
+    </div>
+
+    <div class="question">
+        <h3>10. Какой знак препинания используется для обозначения неполного предложения, которое завершено внутри себя?</h3>
+        <div class="answers">
+            <div class="answer" data-correct="true">-</div>
+            <div class="answer" data-correct="false">?</div>
+            <div class="answer" data-correct="false">;</div>
+            <div class="answer" data-correct="false">:</div>
+        </div>
+    </div>
+    <button id="submit">Проверить результаты</button>
+    <div class="result" style="display: none;">
+        <h2>Результаты теста:</h2>
+        <p>Ваш результат: <span id="score">0</span>/10</p>
+    </div>
+</section>
+
+<script>
+    const submitButton = document.getElementById('submit');
+    const questions = document.querySelectorAll('.question');
+    const resultSection = document.querySelector('.result');
+    let score = 0;
+
+    submitButton.addEventListener('click', () => {
+        score = 0;
+        questions.forEach(question => {
+            const correctAnswer = question.querySelector('.answer[data-correct="true"]');
+            const selectedAnswer = question.querySelector('.answer.selected');
+            if (selectedAnswer === correctAnswer) {
+                score++;
+                selectedAnswer.style.backgroundColor = '#81c784';
+            } else {
+                if (selectedAnswer) {
+                    selectedAnswer.style.backgroundColor = '#ef9a9a';
+                }
+                correctAnswer.style.backgroundColor = '#81c784';
+            }
+            question.querySelectorAll('.answer').forEach(answer => {
+                answer.style.cursor = 'default';
+                answer.removeEventListener('click', selectAnswer);
+            });
+        });
+        resultSection.style.display = 'block';
+        document.getElementById('score').textContent = score;
+    });
+
+    function selectAnswer() {
+        const selectedAnswer = this;
+        const question = selectedAnswer.parentElement.parentElement;
+        const answers = question.querySelectorAll('.answer');
+        answers.forEach(answer => answer.classList.remove('selected'));
+        selectedAnswer.classList.add('selected');
+    }
+
+    questions.forEach(question => {
+        const answers = question.querySelectorAll('.answer');
+        // Случайное перемешивание ответов
+        for (let i = answers.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            question.querySelector('.answers').appendChild(answers[j]);
+        }
+        answers.forEach(answer => answer.addEventListener('click', selectAnswer));
+    });
+</script>
+</body>
+</html>
